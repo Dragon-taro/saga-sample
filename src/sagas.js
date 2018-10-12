@@ -1,17 +1,15 @@
-import { put, fork, take } from "redux-saga/effects";
-import { PLUS, MINUS, increment, decrement } from "./actions";
+import { fork, take } from "redux-saga/effects";
+import { PLUS, MINUS } from "./actions";
 
 function* handleCountPlus() {
   while (true) {
     yield take(PLUS);
-    yield put(increment);
   }
 }
 
 function* handleCountMinus() {
   while (true) {
     yield take(MINUS);
-    yield put(decrement);
   }
 }
 
